@@ -8,16 +8,37 @@
 import Foundation
 
 protocol TextFieldElementViewModelProtocol {
-    var sequense: String { get set }
-    func configureWord(word: String)
+    var suffixCountSorted: String { get set }
+    func countSuffixesFrom(text: String)
 }
 
 final class TextFieldElementViewModel: ObservableObject {
-    private var suffixArray = [String]()
-    @Published var sequense: String = ""
+    @Published var suffixCountSorted = ""
 
-    func configureWord(word: String) {
-        self.suffixArray = Array(SuffixSequence(word: word))
-        sequense = suffixArray.joined(separator: ", ")
+    struct SuffixInfo {
+        let word: String
+        let count: Int
+    }
+
+    func countSuffixesFrom(text: String) {
+        let words = text
+            .split(separator: " ")
+            .map { String($0) }
+        
+        let suffixCount = words
+            .flatMap { SuffixSequence(word: $0) }
+            .reduce([String: Int](), { suffixCount, suffix in
+                var suffixCount = suffixCount
+                suffixCount[suffix] = (suffixCount[suffix] ?? 0) + 1
+                return suffixCount
+            })
+        
+        let suffixCountSorted = suffixCount
+            .map { SuffixInfo(word: $0.key, count: $0.value) }
+            .sorted { info1, info2 in info1.word < info2.word }
+        
+        self.suffixCountSorted = suffixCountSorted.reduce("", { res, info in
+            info.count > 1 ? res + "\(info.word) – \(info.count)\n" : res + "\(info.word)\n"
+        })
     }
 }

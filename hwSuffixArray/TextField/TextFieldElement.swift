@@ -12,7 +12,19 @@ struct TextFieldElement: View {
     @EnvironmentObject var viewModel: TextFieldElementViewModel
 
     var body: some View {
-        TextField("Ведите слово:", text: $inputedWord)
+        InputedField
+            .lineLimit(100)
+            .onSubmit {
+                viewModel.countSuffixesFrom(text: inputedWord)
+            }
+        ScrollView {
+            Text(viewModel.suffixCountSorted)
+        }
+        .frame(height: 300)
+    }
+
+    var InputedField: some View {
+        TextField("Ведите слово:", text: $inputedWord, axis: .vertical)
             .foregroundColor(.cyan)
             .truncationMode(.tail)
             .autocapitalization(.none)
@@ -22,10 +34,6 @@ struct TextFieldElement: View {
                         .stroke(Color.orange, lineWidth: 1)
                 )
             .padding()
-            .onSubmit {
-                viewModel.configureWord(word: inputedWord)
-            }
-        Text(viewModel.sequense)
     }
 }
 
