@@ -17,10 +17,8 @@ struct TextFieldElement: View {
             .onSubmit {
                 viewModel.countSuffixesFrom(text: inputedWord)
             }
-        ScrollView {
-            Text(viewModel.suffixCountSorted)
-        }
-        .frame(height: 300)
+        SegmentedControlElement()
+            .padding(.top, 5)
     }
 
     var InputedField: some View {

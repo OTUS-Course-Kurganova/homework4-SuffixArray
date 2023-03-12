@@ -15,6 +15,8 @@
 		18E63A1329BDD276004B52BB /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E63A1229BDD276004B52BB /* TextFieldViewModel.swift */; };
 		18E63A1629BDD2BF004B52BB /* TextFieldElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E63A1529BDD2BF004B52BB /* TextFieldElement.swift */; };
 		18E63A1929BDDE0D004B52BB /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E63A1829BDDE0D004B52BB /* Sequences.swift */; };
+		18E63A1B29BE38CE004B52BB /* SegmentedControlElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E63A1A29BE38CE004B52BB /* SegmentedControlElement.swift */; };
+		18E63A1D29BE3B13004B52BB /* SegmentedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E63A1C29BE3B13004B52BB /* SegmentedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		18E63A1229BDD276004B52BB /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 		18E63A1529BDD2BF004B52BB /* TextFieldElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldElement.swift; sourceTree = "<group>"; };
 		18E63A1829BDDE0D004B52BB /* Sequences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequences.swift; sourceTree = "<group>"; };
+		18E63A1A29BE38CE004B52BB /* SegmentedControlElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlElement.swift; sourceTree = "<group>"; };
+		18E63A1C29BE3B13004B52BB /* SegmentedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 		18E63A1429BDD298004B52BB /* SegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
+				18E63A1A29BE38CE004B52BB /* SegmentedControlElement.swift */,
+				18E63A1C29BE3B13004B52BB /* SegmentedViewModel.swift */,
 			);
 			path = SegmentedControl;
 			sourceTree = "<group>";
@@ -186,7 +192,9 @@
 				18E63A1329BDD276004B52BB /* TextFieldViewModel.swift in Sources */,
 				180083B0297C184C001761A0 /* suffixArray.swift in Sources */,
 				18E63A1929BDDE0D004B52BB /* Sequences.swift in Sources */,
+				18E63A1D29BE3B13004B52BB /* SegmentedViewModel.swift in Sources */,
 				180083A3297C0B40001761A0 /* ContentView.swift in Sources */,
+				18E63A1B29BE38CE004B52BB /* SegmentedControlElement.swift in Sources */,
 				180083A1297C0B40001761A0 /* hwSuffixArrayApp.swift in Sources */,
 				18E63A1629BDD2BF004B52BB /* TextFieldElement.swift in Sources */,
 			);

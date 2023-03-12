@@ -13,6 +13,7 @@ struct hwSuffixArrayApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(TextFieldElementViewModel())
+                .environmentObject(SegmentedViewModel())
         }
     }
 }
